@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://121.37.172.238:3306/yshs_db?useSSL=false&serverTimezone=UTC
+    username: root
+    password: Yhj18835534246
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.yunshan.tech.model
