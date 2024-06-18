@@ -24,11 +24,14 @@ public class Product {
     private String description;
 
     @Column(name = "product_condition")
-    private String condition;
+    private String productCondition;
 
     private Double price;
 
     private String contact;
+
+    @Column(name = "is_show")
+    private Integer isShow;
 
     // Getters and Setters
 }

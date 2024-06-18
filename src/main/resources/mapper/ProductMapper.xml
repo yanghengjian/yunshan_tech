@@ -6,7 +6,7 @@
 <mapper namespace="com.yunshan.tech.dao.ProductMapper">
 
     <select id="selectAll" resultType="com.yunshan.tech.model.Product">
-        SELECT id, name, images, specification, description, `product_condition`, price, contact
+        SELECT id, name, images, specification, description, `product_condition`, price, contact, is_show
         FROM Product
     </select>
 
