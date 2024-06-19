@@ -54,13 +54,24 @@ public class AuthController {
             }
 
             // 保存文件到上传目录
-            String fileName = file.getOriginalFilename();
+            String originalFileName = file.getOriginalFilename();
+            String fileName = "";
+            if (originalFileName != null) {
+                String fileExtension = "";
+                int dotIndex = originalFileName.lastIndexOf('.');
+                if (dotIndex > 0) {
+                    fileExtension = originalFileName.substring(dotIndex);
+                    fileName = originalFileName.substring(0, dotIndex) + "_" + System.currentTimeMillis() + fileExtension;
+                } else {
+                    fileName = originalFileName + "_" + System.currentTimeMillis();
+                }
+            }
             Path filePath = uploadPath.resolve(fileName);
             Files.copy(file.getInputStream(), filePath);
 
             // 构建可访问的文件URL
             String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("/files/download/")
+                    .path("/auth/download/")
                     .path(fileName)
                     .toUriString();
 

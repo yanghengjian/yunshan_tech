@@ -16,8 +16,7 @@ public class Product {
 
     private String name;
 
-    @ElementCollection
-    private List<String> images;
+    private String  images;
 
     private String specification;
 

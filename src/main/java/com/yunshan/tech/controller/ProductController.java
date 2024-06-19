@@ -28,7 +28,7 @@ public class ProductController {
         return ApiResponse.success("Product added successfully");
     }
 
-    @PutMapping("/update")
+    @PostMapping("/update")
     public ApiResponse<String> update(@RequestBody Product product) {
         productService.updateById(product);
         return ApiResponse.success("Product updated successfully");
