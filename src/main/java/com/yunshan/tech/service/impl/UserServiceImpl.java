@@ -6,14 +6,16 @@ import com.yunshan.tech.dao.UserMapper;
 import com.yunshan.tech.model.User;
 import com.yunshan.tech.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.UUID;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     public User login(String username, String password) {
